@@ -1,0 +1,321 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 10,
+    "passes": 9,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-10-06T09:37:28.561Z",
+    "end": "2024-10-06T09:38:56.693Z",
+    "duration": 88132,
+    "testsRegistered": 10,
+    "passPercent": 90,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "88f99047-b55a-49c5-af6b-c2b92dc82f76",
+      "title": "",
+      "fullFile": "cypress\\Integration\\end_to_end.js",
+      "file": "cypress\\Integration\\end_to_end.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dfc00476-48ce-4510-84c6-b43bf5908468",
+          "title": "register an account and check product comparison",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Product Comparison Button on newly created account",
+              "fullTitle": "register an account and check product comparison Verify Product Comparison Button on newly created account",
+              "timedOut": null,
+              "duration": 4472,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "sh.type('HP LP3065'); // type a available product in the search textbox field \nsh.clickSearch(); // click on the search icon\ncp.clickCPButton(); // after displaying the product click on the product comparison button\ncp.cp_linkShould_visible(); // asserting the added product to comparison message\ncp.clickComparisonLink(); // click on the comparison link\ncp.compare_page_visible(); // poduct comaparison page should be visible to the user\ncp.itemName_should_visible('HP LP3065'); // verifying the selected product is displayed under product comparison",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//a[.=\"Logout\"]`, but never found it.\n\nBecause this error occurred during a `after all` hook we are skipping the remaining tests in the current suite: `register an account and che...`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//a[.=\"Logout\"]`, but never found it.\n\nBecause this error occurred during a `after all` hook we are skipping the remaining tests in the current suite: `register an account and che...`\n    at logout.clickLogout (webpack://constructweek_b39_cypress/./cypress/support/objectClass/openCart/logout.js:4:11)\n    at Context.eval (webpack://constructweek_b39_cypress/./cypress/Integration/end_to_end.js:50:11)",
+                "diff": null
+              },
+              "uuid": "cbf11855-63a3-44b9-9230-74c5d3298fd5",
+              "parentUUID": "dfc00476-48ce-4510-84c6-b43bf5908468",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cbf11855-63a3-44b9-9230-74c5d3298fd5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4472,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "68d87823-18e5-4c4f-b141-32149d64a83e",
+          "title": "product compare functionality testing on existing account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify \"Add to Cart\" and \"Remove\" Buttons After Adding Product to Comparison",
+              "fullTitle": "product compare functionality testing on existing account Verify \"Add to Cart\" and \"Remove\" Buttons After Adding Product to Comparison",
+              "timedOut": null,
+              "duration": 7243,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sh.type(data.product1); // enter the product data from fixture file \nsh.clickSearch(); // click on search button\ncp.clickCPButton(); // click on the comapare product button\ncp.cp_linkShould_visible(); // verify product comparison link should be visible\ncp.clickComparisonLink(); //  click on the link\ncp.compare_page_visible(); // comparison page should be visible\ncp.itemName_should_visible(data.product1); // assert the product is visible and added to the comparison table\ncp.addToCart_should_visible(); // assert the add to cart button is visible\ncp.remove_should_visible(); // asser the remove button is visible",
+              "err": {},
+              "uuid": "20fac08d-6c2f-4d1f-97c5-de6972c4fdae",
+              "parentUUID": "68d87823-18e5-4c4f-b141-32149d64a83e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Adding Multiple Products to the Comparison",
+              "fullTitle": "product compare functionality testing on existing account Verify Adding Multiple Products to the Comparison",
+              "timedOut": null,
+              "duration": 5906,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sh.type(data.product1);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product2);\nsh.clickSearch();\ncp.clickCPButton();\ncp.clickComparisonLink();\n// verify that multiple product is visible to the user in the comparison table\ncp.itemName_should_visible(data.product1);\ncp.itemName_should_visible(data.product2);",
+              "err": {},
+              "uuid": "cfa8f2fd-83db-466a-8272-67f7a2e49c2c",
+              "parentUUID": "68d87823-18e5-4c4f-b141-32149d64a83e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Removing a Product from the Comparison",
+              "fullTitle": "product compare functionality testing on existing account Verify Removing a Product from the Comparison",
+              "timedOut": null,
+              "duration": 6865,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sh.type(data.product1);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product2);\nsh.clickSearch();\ncp.clickCPButton();\ncp.clickComparisonLink();\ncp.compare_page_visible();\n// remove one item from the comparison product table\ncp.clickRemove();\n// verifying that removed product is no more visible to the user\ncp.itemName_should_not_visible(data.product1);",
+              "err": {},
+              "uuid": "17cf3b5e-954e-4ecc-af82-f01071a62584",
+              "parentUUID": "68d87823-18e5-4c4f-b141-32149d64a83e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": " Verify Comparison List is Empty After Removing All Products",
+              "fullTitle": "product compare functionality testing on existing account  Verify Comparison List is Empty After Removing All Products",
+              "timedOut": null,
+              "duration": 6304,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sh.type(data.product1);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product2);\nsh.clickSearch();\ncp.clickCPButton();\ncp.clickComparisonLink();\ncp.compare_page_visible();\ncp.clickRemove();\ncp.clickRemove();\ncy.contains('You have not chosen any products to compare.').should('be.visible');",
+              "err": {},
+              "uuid": "044ad610-6662-4e95-b1ce-a9addd460508",
+              "parentUUID": "68d87823-18e5-4c4f-b141-32149d64a83e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verify after adding 4 product,when 5th product is added, 1st product is getting removed from the comparison list",
+              "fullTitle": "product compare functionality testing on existing account verify after adding 4 product,when 5th product is added, 1st product is getting removed from the comparison list",
+              "timedOut": null,
+              "duration": 8965,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sh.type(data.product1);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product2);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product3);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product4); //  4 different product has been added to the comparison table\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product5); // add a 5th product to the table \nsh.clickSearch();\ncp.clickCPButton();\ncp.clickComparisonLink(); // click on the comaparison link \n// verify that the product which was added for the 1st time is no more visible to the user\ncp.itemName_should_not_visible(data.product1);",
+              "err": {},
+              "uuid": "5eda8b55-8361-4877-be07-b8e791346e97",
+              "parentUUID": "68d87823-18e5-4c4f-b141-32149d64a83e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verify duplicate product addition to comparison",
+              "fullTitle": "product compare functionality testing on existing account verify duplicate product addition to comparison",
+              "timedOut": null,
+              "duration": 4873,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sh.type(data.product1);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product1);\nsh.clickSearch();\ncp.clickCPButton(); // this will complete the process of adding duplicate items to the comparison table\ncp.clickComparisonLink();\n// verify that the table displaying the item for one time.\ncy.contains(data.product1).should('have.length', 1);",
+              "err": {},
+              "uuid": "b87f56ef-f22c-455e-a8fa-80dbdb11ecd6",
+              "parentUUID": "68d87823-18e5-4c4f-b141-32149d64a83e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Display of Product Attributes on Comparison Page",
+              "fullTitle": "product compare functionality testing on existing account Verify Display of Product Attributes on Comparison Page",
+              "timedOut": null,
+              "duration": 4990,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sh.type(data.product1);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product2);\nsh.clickSearch();\ncp.clickCPButton();\ncp.clickComparisonLink();\n// itrarting thorough the comparison table\ncy.get('.table.table-bordered').within(() => {\n  // asserting that multiple product is displaying inside the table\n  cy.contains(data.product1).should('exist');\n  cy.contains(data.product2).should('exist');\n  // verifying three atrributes to have correct details\n  cy.contains('Price').next().should('contain.text', '$122.00');\n  cy.contains('Model').next().should('contain.text', 'Product 21');\n  cy.contains('Brand').next().should('contain.text', 'Hewlett-Packard');\n  // verifying the same attributes having correct details and showing side by side for the better viewingment of the user\n  cy.contains('Price').next().next().should('contain.text', '$123.20');\n  cy.contains('Model').next().next().should('contain.text', 'product 11');\n  cy.contains('Brand').next().next().should('contain.text', 'Apple');\n});",
+              "err": {},
+              "uuid": "80de5533-30dd-4777-a544-365a34be7ee2",
+              "parentUUID": "68d87823-18e5-4c4f-b141-32149d64a83e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Comparison After Page Refresh",
+              "fullTitle": "product compare functionality testing on existing account Verify Comparison After Page Refresh",
+              "timedOut": null,
+              "duration": 6084,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "sh.type(data.product1);\nsh.clickSearch();\ncp.clickCPButton();\nsh.type(data.product2);\nsh.clickSearch();\ncp.clickCPButton();\ncp.clickComparisonLink();\n// refreshing the web page\ncy.reload();\n// verifying the comparison product details remain intact after refresing the web page\ncy.contains(data.product1).should('exist');\ncy.contains(data.product2).should('exist');",
+              "err": {},
+              "uuid": "eede1f0c-41d5-4638-a3e7-f62b6fad6013",
+              "parentUUID": "68d87823-18e5-4c4f-b141-32149d64a83e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "20fac08d-6c2f-4d1f-97c5-de6972c4fdae",
+            "cfa8f2fd-83db-466a-8272-67f7a2e49c2c",
+            "17cf3b5e-954e-4ecc-af82-f01071a62584",
+            "044ad610-6662-4e95-b1ce-a9addd460508",
+            "5eda8b55-8361-4877-be07-b8e791346e97",
+            "b87f56ef-f22c-455e-a8fa-80dbdb11ecd6",
+            "80de5533-30dd-4777-a544-365a34be7ee2",
+            "eede1f0c-41d5-4638-a3e7-f62b6fad6013"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 51230,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "886065f9-8afe-4966-8ee8-3bb318f0adc1",
+          "title": " Testing the product comapare functionlity for the guest user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "adding , removing, and  add to cart from product comapare page without login or register",
+              "fullTitle": " Testing the product comapare functionlity for the guest user adding , removing, and  add to cart from product comapare page without login or register",
+              "timedOut": null,
+              "duration": 6196,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// launch the website on the browser\nhp.visit();\n// add multiple items to the copmare product\nhp.compareButtonAppleCinema();\nhp.compareButtonCanon();\n// assert the success message and the link should visible \ncp.cp_linkShould_visible();\n//click on the comparison link\ncp.clickComparisonLink();\n// verify that product comparison page is opening for the guest user\ncp.compare_page_visible();\n// remove items from the list as a guest user\ncp.clickRemove();\ncy.wait(2000);\n// add the product to cart this will take us to the product result page\ncp.ClickAddToCart();\ncy.wait(2000);\n// verify that the description of the product  is visible to the user \ncy.contains('Description').should('be.visible');",
+              "err": {},
+              "uuid": "e8610fcd-c84b-448e-a284-9928297b1a6a",
+              "parentUUID": "886065f9-8afe-4966-8ee8-3bb318f0adc1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e8610fcd-c84b-448e-a284-9928297b1a6a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6196,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
