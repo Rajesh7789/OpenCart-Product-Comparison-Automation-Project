@@ -9,11 +9,12 @@ Since this project is about testing and not deploying a live application, the Op
 ## Directory Structure
 opencart-comparison-automation/  
 ├── cypress/  
-│   ├── integration/ 
+│   ├── integration/  
 │   ├── fixtures/  
 │   ├── support/  
 │   └── reports/  
 ├── node_modules/  
+|── readme.md
 ├── cypress.json  
 ├── package.json  
 ## Video Walkthrough of the Project
