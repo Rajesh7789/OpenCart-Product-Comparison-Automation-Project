@@ -18,7 +18,7 @@ opencart-comparison-automation/
 ├── cypress.json  
 ├── package.json  
 ## Video Walkthrough of the Project
-[Link to the video](https://youtu.be/-T8wZ2Bf8Uo)
+[Click here for the video demo](https://youtu.be/-T8wZ2Bf8Uo)
 ## Features
 Key features of the automation:
 
