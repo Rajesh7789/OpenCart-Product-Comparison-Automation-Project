@@ -14,7 +14,7 @@ opencart-comparison-automation/
 │   ├── support/  
 │   └── reports/  
 ├── node_modules/  
-|── readme.md
+|── readme.md  
 ├── cypress.json  
 ├── package.json  
 ## Video Walkthrough of the Project
